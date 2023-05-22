@@ -61,7 +61,7 @@
 
           texlab = {
             enable = true;
-            extraSettings = {
+            extraOptions.settings = {
               texlab = {
                 build = {
                   onSave = true;
