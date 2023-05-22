@@ -42,8 +42,11 @@
     gnumake
     cargo
     rustc
-    python3
     ghc
+    (python3.withPackages (ps: with ps; [
+      ipython
+      sympy
+    ]))
 
     # language servers
     nil
