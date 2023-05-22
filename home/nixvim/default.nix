@@ -48,6 +48,7 @@
             enable = true;
             settings.plugins = {
               pylint.enabled = true;
+              pycodestyle.enabled = true;
               yapf.enabled = true;
             };
           };
