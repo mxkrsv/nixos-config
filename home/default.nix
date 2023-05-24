@@ -120,7 +120,7 @@
       bindkey "^U" backward-kill-line
 
       # beautiful ls
-      alias ls='ls -hF --color=auto'
+      alias ls='ls -hF --color=tty'
 
       # enable colors
       autoload -Uz colors && colors
