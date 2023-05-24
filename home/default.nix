@@ -4,6 +4,7 @@
   imports = [
     ./nixvim
     ./age
+    ./aerc
   ];
 
   home = {
@@ -256,83 +257,6 @@
     settings = {
       git_protocol = "ssh";
       prompt = "enabled";
-    };
-  };
-
-  programs.aerc = {
-    enable = true;
-
-    extraConfig = {
-      ui = {
-        timestamp-format = "2006-01-02 15:04";
-        mouse-enabled = true;
-        border-char-vertical = "│";
-        border-char-horizontal = "─";
-        threading-enabled = true;
-      };
-      filters = {
-        "text/plain" = "colorize | ${pkgs.talkfilters}/bin/wrap -w 100";
-        "text/html" = "html-unsafe | colorize";
-      };
-    };
-
-    stylesets = {
-      default = ''
-        # should work with any terminal colorscheme, but was designed for gruvbox
-        # terminal colors are preferred, but hex is used for grayscale
-        
-        *.default=true
-        
-        # present in 'Send this email?' dialog
-        title.fg=yellow
-        title.bg=#303030
-        title.bold=true
-        
-        # used in setup and in 'From:' etc
-        header.bold=true
-        header.fg=purple
-        
-        # decorative lines
-        border.fg=blue
-        
-        # requires attention
-        *error.bold=true
-        *error.fg=red
-        *error.blink=true
-        *warning.fg=yellow
-        *warning.blink=true
-        *success.fg=green
-        
-        # statusline
-        statusline_default.fg=gray
-        statusline_*.bg=#303030
-        
-        # message list colors
-        msglist_deleted.fg=gray
-        msglist_unread.fg=green
-        msglist_read.fg=blue
-        msglist_marked.fg=yellow
-        msglist_marked.reverse=true
-        
-        # inbox etc
-        dirlist_default.fg=gray
-        
-        # highlight selected item
-        *.selected.bg=#3a3a3a
-        *.selected.fg=white
-        *.selected.bold=true
-        
-        # primarily used in account setup
-        selector_default.fg=gray
-        selector_chooser.bold=true
-        selector_focused.bg=#3a3a3a
-        selector_focused.bold=true
-        
-        # command completion
-        completion_default.bg=#303030
-        completion_gutter.bg=#303030
-        completion_pill.bg=aqua
-      '';
     };
   };
 
