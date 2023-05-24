@@ -434,4 +434,12 @@
       set fish_cursor_visual block
     '';
   };
+
+  programs.rbw = {
+    enable = true;
+    settings = {
+      email = "mxkrsv@disroot.org";
+      pinentry = "curses";
+    };
+  };
 }
