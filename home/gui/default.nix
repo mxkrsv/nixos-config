@@ -11,6 +11,7 @@
     libreoffice-fresh
     tdesktop
     imv
+    wireshark
   ];
 
   xdg.configFile = {
