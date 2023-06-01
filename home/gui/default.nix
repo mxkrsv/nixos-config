@@ -108,7 +108,7 @@
     progressColor = "source #cc241d";
     borderRadius = 0;
     borderSize = 2;
-    defaultTimeout = 0;
+    defaultTimeout = 5000;
     margin = "10";
     width = 200;
   };
