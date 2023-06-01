@@ -65,7 +65,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" "wireshark" ];
     shell = pkgs.zsh;
   };
 
@@ -225,6 +225,8 @@
   programs.kdeconnect.enable = true;
 
   programs.adb.enable = true;
+
+  programs.wireshark.enable = true;
 
   # lanzaboote
 
