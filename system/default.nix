@@ -1,8 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -13,19 +9,9 @@
     '';
   };
 
-  # Secureboot
-  #boot.bootspec.enable = true;
-  #boot.loader.systemd-boot.enable = lib.mkForce false;
-  #boot.lanzaboote = {
-  #  enable = true;
-  #  pkiBundle = "/etc/secureboot";
-  #};
-
-  networking.hostName = "sayaka";
-
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  # networking.wireless.enable = true;
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -45,20 +31,22 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  hardware.usbWwan.enable = true;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
-    extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
-    ];
   };
-
-  hardware.usbWwan.enable = true;
 
   # Enable sound.
   sound.enable = true;
   # hardware.pulseaudio.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
   hardware.bluetooth.enable = true;
 
@@ -119,12 +107,6 @@
     sbctl # secure boot keys
   ];
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
   # (org.freedesktop.portal.Desktop) and object path
@@ -138,12 +120,6 @@
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
-  # enable sway window manager
-  #programs.sway = {
-  #  enable = true;
-  #  wrapperFeatures.gtk = true;
-  #};
 
   programs.light.enable = true;
 
@@ -183,38 +159,9 @@
     ];
   };
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      # amd-pstate=active
-      CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-      PLATFORM_PROFILE_ON_AC = "balanced";
-      PLATFORM_PROFILE_ON_BAT = "balanced";
-
-      RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
-      RADEON_DPM_PERF_LEVEL_ON_BAT = "auto";
-    };
-  };
-
   environment.defaultPackages = [ ];
 
-  services.fprintd = {
-    enable = true;
-  };
-
   programs.dconf.enable = true;
-
-  security.pam.services = {
-    # somewhy required
-    swaylock.fprintAuth = true;
-    # slightly more security
-    greetd.fprintAuth = false;
-  };
 
   services.fwupd.enable = true;
 
@@ -228,25 +175,9 @@
 
   programs.wireshark.enable = true;
 
-  # lanzaboote
-
-  # This should already be here from switching to bootspec earlier.
-  # It's not required anymore, but also doesn't do any harm.
-  boot.bootspec.enable = true;
-
-  # Lanzaboote currently replaces the systemd-boot module.
-  # This setting is usually set to true in configuration.nix
-  # generated at installation time. So we force it to false
-  # for now.
-  boot.loader.systemd-boot.enable = pkgs.lib.mkForce false;
-
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/etc/secureboot";
-  };
-
   # allow root to edit hosts directly (will reset after system rebuild)
   environment.etc.hosts.mode = "0644";
 
+  # I play CTF
   networking.firewall.enable = false;
 }

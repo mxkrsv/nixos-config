@@ -26,7 +26,8 @@
         system = "x86_64-linux";
         specialArgs = attrs;
         modules = [
-          ./system/configuration.nix
+          ./system
+          ./system/sayaka
           lanzaboote.nixosModules.lanzaboote
         ];
       };
