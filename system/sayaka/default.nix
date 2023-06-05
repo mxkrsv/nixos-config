@@ -19,6 +19,7 @@
     swaylock.fprintAuth = true;
     # slightly more security
     greetd.fprintAuth = false;
+    login.fprintAuth = false;
   };
 
   services.tlp = {
