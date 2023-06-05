@@ -348,9 +348,6 @@
       c.colors.tabs.selected.odd.bg = fg
       c.colors.tabs.selected.even.fg = bg
       c.colors.tabs.selected.even.bg = fg
-      
-      # Not always wanted
-      # c.colors.webpage.bg = bg
     '';
   };
 
