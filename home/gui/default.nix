@@ -210,6 +210,7 @@
 
     settings = {
       auto_save.session = true;
+      session.lazy_restore = true;
       colors.webpage = {
         preferred_color_scheme = "dark";
         #darkmode.enabled = true;
