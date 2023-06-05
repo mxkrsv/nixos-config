@@ -204,8 +204,8 @@
 
     searchEngines = {
       DEFAULT = "https://www.google.com/search?q={}";
-      "!rl" = "https://repology.org/projects/?search={}";
-      "!rc" = "https://context.reverso.net/translation/english-russian/{}";
+      "!repology" = "https://repology.org/projects/?search={}";
+      "!reversocontext" = "https://context.reverso.net/translation/english-russian/{}";
     };
 
     settings = {
