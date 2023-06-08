@@ -206,6 +206,8 @@
       DEFAULT = "https://www.google.com/search?q={}";
       "!repology" = "https://repology.org/projects/?search={}";
       "!reversocontext" = "https://context.reverso.net/translation/english-russian/{}";
+      "!nixos-packages" = "https://search.nixos.org/packages?query={}";
+      "!nixos-options" = "https://search.nixos.org/options?query={}";
     };
 
     settings = {
