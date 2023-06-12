@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }: {
   wayland.windowManager.sway = {
     enable = true;
-    systemdIntegration = true;
+    systemd.enable = true;
 
     # It doesn't work
     extraSessionCommands = ''
