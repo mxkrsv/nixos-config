@@ -20,11 +20,11 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, ... }@attrs: {
+  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, ... }@inputs: {
     nixosConfigurations = {
       sayaka = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = attrs;
+        specialArgs = { inherit inputs; };
         modules = [
           ./system
           ./system/sayaka
@@ -36,7 +36,7 @@
     homeConfigurations = {
       "mxkrsv@sayaka" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = attrs;
+        extraSpecialArgs = { inherit inputs; };
         modules = [
           ./home
           ./home/gui
