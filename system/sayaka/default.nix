@@ -5,10 +5,13 @@
 
   networking.hostName = "sayaka";
 
+  # enable OpenCL
   hardware.opengl.extraPackages = with pkgs; [
-    rocm-opencl-icd
-    rocm-opencl-runtime
+    mesa.opencl
   ];
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
+  };
 
   services.fprintd = {
     enable = true;
