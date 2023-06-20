@@ -34,6 +34,7 @@
     ffmpeg
     strace
     gdb
+    hyperfine
 
     paratype-pt-mono
 
