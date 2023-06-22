@@ -9,6 +9,9 @@
       export QT_QPA_PLATFORM=wayland
       export SDL_VIDEODRIVER=wayland
       export GTK_THEME=Adwaita:dark
+
+      export EDITOR=nvim
+      export VISUAL=nvim
     '';
 
     swaynag = {
