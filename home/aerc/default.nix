@@ -18,7 +18,7 @@
         dirlist-collapse = 1;
       };
       filters = {
-        "text/plain" = "colorize | ${pkgs.talkfilters}/bin/wrap -w 100";
+        "text/plain" = "colorize | ${pkgs.busybox}/bin/fold -sw100";
         "text/html" = "html-unsafe | colorize";
       };
     };
