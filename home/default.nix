@@ -65,12 +65,17 @@
     sops
   ];
 
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  #home.sessionVariables = {
-  #  DEFAULT_USER = "mxkrsv";
-  #};
+  # nicely reload system units when changing configs
+  # and also set global session variables in a way
+  # that they will also be available to user services and all started programs,
+  # not just those that was started via shell
+  systemd.user = {
+    startServices = "sd-switch";
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+  };
 
   home.pointerCursor = {
     name = "Adwaita";
