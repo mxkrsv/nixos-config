@@ -226,6 +226,9 @@
           "${mod}+Ctrl+Shift+Left" = "move workspace to output left";
           "${mod}+Ctrl+Shift+Right" = "move workspace to output right";
 
+          # Global fullscreen
+          "${mod}+Shift+f" = "fullscreen toggle global";
+
           # Modes
           "${mod}+Equal" = "mode passthrough";
           "${mod}+c" = "mode config";
