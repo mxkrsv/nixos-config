@@ -6,6 +6,6 @@ let
   systems = [ sayaka ];
 in
 {
-  "gh_hosts.age".publicKeys = users ++ systems;
-  "glab_config.age".publicKeys = users ++ systems;
+  "gh_hosts.age".publicKeys = users;
+  "glab_config.age".publicKeys = users;
 }
