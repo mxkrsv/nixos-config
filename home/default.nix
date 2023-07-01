@@ -94,7 +94,9 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
     enableCompletion = true;
     dotDir = ".config/zsh";
     plugins = [
