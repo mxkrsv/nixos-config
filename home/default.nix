@@ -30,6 +30,7 @@
     # utils
     jq
     ripgrep
+    pdfgrep
     file
     ffmpeg
     strace
