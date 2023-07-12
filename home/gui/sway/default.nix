@@ -41,6 +41,7 @@
 
       startup = [
         { command = "foot --server"; }
+        { command = "pkill -SIGHUP kanshi"; always = true; }
       ];
 
       bars = [
