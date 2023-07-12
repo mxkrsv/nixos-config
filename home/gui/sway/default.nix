@@ -3,15 +3,14 @@
     enable = true;
     systemd.enable = true;
 
-    # It doesn't work
     extraSessionCommands = ''
       export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
       export SDL_VIDEODRIVER=wayland
       export GTK_THEME=Adwaita:dark
 
-      export EDITOR=nvim
-      export VISUAL=nvim
+      # home-manager home.sessionVariables
+      source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
     '';
 
     swaynag = {
