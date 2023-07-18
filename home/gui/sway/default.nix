@@ -18,7 +18,7 @@
       settings = {
         "<config>" = {
           edge = "bottom";
-          font = "JetBrains Mono 10";
+          font = "JetBrains Mono 11";
           border-bottom-size = "0";
         };
         warning = {
@@ -279,7 +279,6 @@
         border = 2;
         titlebar = false;
       };
-
     };
 
     extraConfig = ''

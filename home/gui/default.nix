@@ -59,7 +59,7 @@
   programs.zathura = {
     enable = true;
     options = {
-      font = "JetBrains Mono 10";
+      font = "JetBrains Mono 11";
       selection-clipboard = "clipboard";
       synctex-editor-command = "footclient nvim";
 
@@ -102,7 +102,7 @@
 
   services.mako = {
     enable = true;
-    font = "JetBrains Mono 10";
+    font = "JetBrains Mono 11";
     backgroundColor = "#282828e0";
     borderColor = "#ebdbb2";
     textColor = "#ebdbb2";
@@ -119,7 +119,7 @@
     #server.enable = true; // can't execute desktop files in that case
     settings = {
       main = {
-        font = "JetBrains Mono:size=10";
+        font = "JetBrains Mono:size=11";
         dpi-aware = false;
         pad = "0x0";
       };
@@ -220,7 +220,7 @@
       content.autoplay = false;
       fonts = {
         default_family = "JetBrains Mono";
-        default_size = "10pt";
+        default_size = "11pt";
       };
       url = {
         default_page = "https://www.google.com/";
