@@ -155,6 +155,7 @@
   };
 
   programs.swaylock = {
+    enable = true;
     settings = {
       font = "JetBrains Mono";
       font-size = 20;
