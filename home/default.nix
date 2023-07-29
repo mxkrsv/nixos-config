@@ -50,6 +50,7 @@
       ipython
       sympy
     ]))
+    typst
 
     # language servers
     nil
