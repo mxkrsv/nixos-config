@@ -414,7 +414,11 @@
     timeouts = [
       {
         timeout = 900;
-        command = "chayang -d10 && ${pkgs.sway}/bin/swaymsg 'output * power off' && ${pkgs.swaylock}/bin/swaylock";
+        command = "${pkgs.chayang}/bin/chayang -d10 &";
+      }
+      {
+        timeout = 910;
+        command = "${pkgs.sway}/bin/swaymsg 'output * power off' && ${pkgs.swaylock}/bin/swaylock";
         resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
       }
     ];
