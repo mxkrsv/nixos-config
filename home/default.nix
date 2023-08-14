@@ -23,7 +23,6 @@
     cmus
     neofetch
     texlive.combined.scheme-full
-    radare2
     libqalculate
     gnupg
 
@@ -62,6 +61,10 @@
     nmap
     ffuf
     netcat-gnu
+    (rizin.withPlugins (ps: with ps; [
+      rz-ghidra
+      sigdb
+    ]))
 
     sops
   ];
