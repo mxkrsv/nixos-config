@@ -11,6 +11,11 @@
     libreoffice-fresh
     tdesktop
     wireshark
+
+    # fonts
+    font-awesome
+    jetbrains-mono
+    dejavu_fonts
   ];
 
   programs.fuzzel = {
