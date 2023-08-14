@@ -219,9 +219,10 @@
 
   services.gpg-agent = {
     enable = true;
-    enableSshSupport = true;
     pinentryFlavor = "curses";
   };
+
+  services.ssh-agent.enable = true;
 
   programs.lf = {
     enable = true;
