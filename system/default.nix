@@ -34,8 +34,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.usbWwan.enable = true;
-
   hardware.opengl = {
     enable = true;
     driSupport = true;
