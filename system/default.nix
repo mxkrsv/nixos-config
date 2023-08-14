@@ -139,14 +139,6 @@
   programs.zsh.enable = true;
   programs.fish.enable = true;
 
-  fonts = {
-    fonts = with pkgs; [
-      font-awesome
-      jetbrains-mono
-      dejavu_fonts
-    ];
-  };
-
   security.polkit.enable = true;
 
   security.sudo.enable = true;
