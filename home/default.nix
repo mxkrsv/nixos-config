@@ -65,8 +65,6 @@
       rz-ghidra
       sigdb
     ]))
-
-    sops
   ];
 
   # nicely reload system units when changing configs
