@@ -163,6 +163,9 @@
 
       luasnip.enable = true;
       treesitter.enable = true;
+      gitsigns.enable = true;
+      nvim-autopairs.enable = true;
+      illuminate.enable = true;
     };
   };
 }
