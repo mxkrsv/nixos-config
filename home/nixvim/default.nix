@@ -163,11 +163,6 @@
 
       luasnip.enable = true;
       treesitter.enable = true;
-
-      nvim-jdtls = {
-        enable = true;
-        data = "${config.home.homeDirectory}/.cache/jdtls/workspace";
-      };
     };
   };
 }
