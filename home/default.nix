@@ -374,7 +374,7 @@
     enable = true;
     settings = {
       email = "mxkrsv@disroot.org";
-      pinentry = "curses";
+      pinentry = "gnome3";
     };
   };
 }
