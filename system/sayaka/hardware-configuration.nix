@@ -12,7 +12,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.kernelParams = [ "amd_pstate=active" ];
+  boot.kernelParams = [ ];
 
   fileSystems."/" =
     {
