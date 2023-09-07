@@ -184,4 +184,6 @@
 
   # I play CTF
   networking.firewall.enable = false;
+
+  services.dbus.packages = [ pkgs.gcr ];
 }
