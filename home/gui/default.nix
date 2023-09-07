@@ -244,7 +244,6 @@
 
   programs.qutebrowser = {
     enable = true;
-    package = pkgs.qutebrowser-qt6;
 
     searchEngines = {
       DEFAULT = "https://www.google.com/search?q={}";
