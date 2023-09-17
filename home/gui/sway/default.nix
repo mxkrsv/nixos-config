@@ -246,7 +246,7 @@
           p = "exec swaynag -t warning -m 'Poweroff?' -b 'Yes' 'systemctl poweroff'; mode default";
           r = "exec swaynag -t warning -m 'Reboot?' -b 'Yes' 'systemctl reboot'; mode default";
           s = "exec systemctl suspend; mode default";
-          "--release l" = "exec pkill -USR1 swayidle; mode default";
+          "--release l" = "exec loginctl lock-session; mode default";
 
           b = "exec ${pkgs.light}/bin/light -T 1.4";
           "Shift+b" = "exec ${pkgs.light}/bin/light -T 0.72";

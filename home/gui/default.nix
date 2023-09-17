@@ -409,7 +409,7 @@
       }
       {
         event = "unlock";
-        command = "pkill -USR1 swaylock";
+        command = "${pkgs.procps}/bin/pkill -USR1 swaylock";
       }
     ];
     extraArgs = [
@@ -417,12 +417,17 @@
     ];
     timeouts = [
       {
-        timeout = 900;
-        command = "${pkgs.chayang}/bin/chayang -d10 &";
+        # turn the screen off quickly if the screen was locked manually
+        timeout = 15;
+        command = "${pkgs.procps}/bin/pgrep -x swaylock && \\
+          ${pkgs.sway}/bin/swaymsg 'output * power off'";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
       }
       {
-        timeout = 910;
-        command = "${pkgs.sway}/bin/swaymsg 'output * power off' && ${pkgs.swaylock}/bin/swaylock";
+        timeout = 900;
+        command = "${pkgs.chayang}/bin/chayang -d10 && \\
+          ${pkgs.sway}/bin/swaymsg 'output * power off' && \\
+          ${pkgs.swaylock}/bin/swaylock";
         resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
       }
     ];
