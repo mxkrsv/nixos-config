@@ -65,7 +65,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" "wireshark" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" "wireshark" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -171,6 +171,7 @@
 
   virtualisation = {
     podman.enable = true;
+    docker.enable = true;
   };
 
   programs.kdeconnect.enable = true;
