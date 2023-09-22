@@ -15,7 +15,7 @@
       #inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim.url = "github:pta2002/nixvim";
+    nixvim.url = "github:nix-community/nixvim";
 
     agenix.url = "github:ryantm/agenix";
   };
