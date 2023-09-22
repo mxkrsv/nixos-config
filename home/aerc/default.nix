@@ -125,23 +125,6 @@
       aerc.enable = true;
     };
 
-    Work = {
-      address = "mxkrsv@etersoft.ru";
-      userName = "mxkrsv@office.etersoft.ru";
-      realName = "Максим Карасев";
-      passwordCommand = "${pkgs.rbw}/bin/rbw get mail.etersoft.ru";
-      imap = {
-        host = "mail.etersoft.ru";
-        tls.enable = true;
-      };
-      smtp = {
-        host = "mail.etersoft.ru";
-        tls.enable = true;
-      };
-      folders.inbox = "INBOX";
-      aerc.enable = true;
-    };
-
     University = {
       flavor = "yandex.com";
       address = "makarasev@stud.etu.ru";
