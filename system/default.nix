@@ -100,23 +100,29 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment.systemPackages = with pkgs; [
+    # system
     linuxPackages_latest.cpupower
     openssl
-    pulsemixer
-    htop
-    wayland
-    xdg-utils
     glib # gsettings
-    gnome3.adwaita-icon-theme
-    wl-clipboard
-    neovim
-    wget
-    gopass
     man-pages
     man-pages-posix
-    tmux
-    git
     sbctl # secure boot keys
+    wayland
+
+    # essential system utils
+    htop
+    wget
+    tmux
+    inetutils
+    dig
+
+    # non-essential programs
+    gnome3.adwaita-icon-theme
+    pulsemixer
+    git
+    xdg-utils
+    wl-clipboard
+    neovim
   ];
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
