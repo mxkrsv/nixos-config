@@ -6,8 +6,8 @@
   networking.hostName = "sayaka";
 
   hardware.opengl.extraPackages = with pkgs; [
-    rocm-opencl-icd
-    rocm-opencl-runtime
+    rocmPackages.clr
+    rocmPackages.clr.icd
   ];
 
   services.fprintd = {
