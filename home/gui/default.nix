@@ -477,7 +477,13 @@
 
   gtk = {
     enable = true;
-    theme.name = "Adwaita:dark";
+    theme.name = "Adwaita";
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   programs.chromium = {
