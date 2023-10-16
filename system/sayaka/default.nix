@@ -50,7 +50,7 @@
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
       PLATFORM_PROFILE_ON_AC = "balanced";
-      PLATFORM_PROFILE_ON_BAT = "balanced";
+      PLATFORM_PROFILE_ON_BAT = "low-power";
 
       RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
       RADEON_DPM_PERF_LEVEL_ON_BAT = "auto";
