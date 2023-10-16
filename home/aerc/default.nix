@@ -29,6 +29,7 @@
         # terminal colors are preferred, but hex is used for grayscale
 
         *.default=true
+        *.normal=true
 
         # present in 'Send this email?' dialog
         title.fg=yellow
