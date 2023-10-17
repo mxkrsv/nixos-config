@@ -49,6 +49,7 @@
       ipython
       sympy
     ]))
+    valgrind
 
     # language servers
     nil
