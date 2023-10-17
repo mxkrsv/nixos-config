@@ -115,6 +115,8 @@
     tmux
     inetutils
     dig
+    pciutils
+    usbutils
 
     # non-essential programs
     gnome3.adwaita-icon-theme
