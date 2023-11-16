@@ -9,7 +9,7 @@
     xonotic
     xonotic-data
     libreoffice-fresh
-    tdesktop
+    telegram-desktop
     wireshark
 
     # fonts
