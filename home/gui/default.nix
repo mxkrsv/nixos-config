@@ -492,6 +492,10 @@
       "--enable-ozone"
       "--ozone-platform=wayland"
     ];
+    extensions = [
+      # ublock origin
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
+    ];
   };
 
   fonts.fontconfig.enable = true;
