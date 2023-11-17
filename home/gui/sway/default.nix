@@ -116,6 +116,11 @@
         ];
       };
 
+      #assigns = {
+      #  "1" = [{ app_id = "org.qutebrowser.qutebrowser"; }];
+      #  "2" = [{ app_id = "org.telegram.desktop"; }];
+      #};
+
       focus = {
         newWindow = "urgent";
       };
