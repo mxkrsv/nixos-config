@@ -4,6 +4,7 @@
   imports = [
     ./nixvim
     ./age
+    ./accounts
     ./aerc
   ];
 
