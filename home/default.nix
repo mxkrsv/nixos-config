@@ -379,4 +379,20 @@
       pinentry = "gnome3";
     };
   };
+
+  programs.khal = {
+    enable = true;
+
+    locale = {
+      timeformat = "%H:%M";
+      dateformat = "%d.%m";
+      longdateformat = "%d.%m.%Y";
+      datetimeformat = "%d.%m %H:%M";
+      longdatetimeformat = "%d.%m.%Y %H:%M";
+    };
+  };
+
+  programs.vdirsyncer = {
+    enable = true;
+  };
 }
