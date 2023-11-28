@@ -41,8 +41,13 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
-          rust-analyzer.enable = true;
           hls.enable = true;
+
+          rust-analyzer = {
+            enable = true;
+            installCargo = false;
+            installRustc = false;
+          };
 
           pylsp = {
             enable = true;
