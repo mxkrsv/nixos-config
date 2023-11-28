@@ -460,6 +460,13 @@
       exec = "newsboat %U";
       terminal = true;
       categories = [ "News" ];
+
+    qalc = {
+      name = "qalc";
+      genericName = "Calculator";
+      exec = "qalc %U";
+      terminal = true;
+      categories = [ "Calculator" "Utility" "Science" "Education" "ConsoleOnly" ];
     };
   };
 
