@@ -451,7 +451,7 @@
       genericName = "Music player";
       exec = "cmus %U";
       terminal = true;
-      categories = [ "Audio" "Music" ];
+      categories = [ "Audio" "Music" "ConsoleOnly" ];
     };
 
     newsboat = {
@@ -459,7 +459,8 @@
       genericName = "RSS feed reader";
       exec = "newsboat %U";
       terminal = true;
-      categories = [ "News" ];
+      categories = [ "Feed" "News" "Network" "ConsoleOnly" ];
+    };
 
     qalc = {
       name = "qalc";
