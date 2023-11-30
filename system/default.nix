@@ -160,16 +160,6 @@
 
   security.sudo.enable = true;
 
-  security.doas = {
-    enable = true;
-    extraRules = [
-      {
-        groups = [ "wheel" ];
-        persist = true;
-      }
-    ];
-  };
-
   environment.defaultPackages = [ ];
 
   programs.dconf.enable = true;
