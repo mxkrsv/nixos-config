@@ -32,6 +32,15 @@
           lanzaboote.nixosModules.lanzaboote
         ];
       };
+
+      default = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ({ ... }: { networking.hostName = "fallback-hostname"; })
+          ./system
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -43,6 +52,16 @@
           ./home/gui
           nixvim.homeManagerModules.nixvim
           agenix.homeManagerModules.age
+        ];
+      };
+
+      "mxkrsv@default" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./home
+          ./home/gui
+          nixvim.homeManagerModules.nixvim
         ];
       };
     };
