@@ -3,8 +3,6 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "sayaka";
-
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr
     rocmPackages.clr.icd
