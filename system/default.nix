@@ -167,7 +167,7 @@
   services.fwupd.enable = true;
 
   virtualisation = {
-    podman.enable = true;
+    #podman.enable = true;
     docker.enable = true;
   };
 
