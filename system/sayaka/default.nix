@@ -17,8 +17,6 @@
   };
 
   security.pam.services = {
-    # somewhy required
-    #swaylock.fprintAuth = true;
     swaylock.text = ''
       # Account management.
       account required pam_unix.so

@@ -180,4 +180,7 @@
   networking.firewall.enable = false;
 
   services.dbus.packages = [ pkgs.gcr ];
+
+  # Fix swaylock
+  security.pam.services.swaylock = {};
 }
