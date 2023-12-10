@@ -33,6 +33,16 @@
         ];
       };
 
+      homura = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ({ ... }: { networking.hostName = "homura"; })
+          ./system
+          ./system/homura
+        ];
+      };
+
       default = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -45,6 +55,17 @@
 
     homeConfigurations = {
       "mxkrsv@sayaka" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./home
+          ./home/gui
+          nixvim.homeManagerModules.nixvim
+          agenix.homeManagerModules.age
+        ];
+      };
+
+      "mxkrsv@homura" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
         modules = [
