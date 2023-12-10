@@ -183,4 +183,7 @@
 
   # Fix swaylock
   security.pam.services.swaylock = {};
+
+  # Enable ucode updates
+  hardware.enableRedistributableFirmware = true;
 }
