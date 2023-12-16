@@ -165,6 +165,7 @@
     urls = [
       { url = "https://alpinelinux.org/atom.xml"; }
       { url = "https://postmarketos.org/blog/feed.atom"; }
+      { url = "https://www.linux.org.ru/section-rss.jsp?section=1"; }
       { url = "https://www.opennet.ru/opennews/opennews_all_utf.rss"; }
       { url = "https://www.phoronix.com/rss.php"; }
       { url = "https://sourcehut.org/blog/index.xml"; }
