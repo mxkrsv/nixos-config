@@ -163,8 +163,6 @@
     autoReload = true;
 
     urls = [
-      { url = "https://repology.org/maintainer/begs%40disroot.org/feed-for-repo/alpine_edge/atom"; }
-      { url = "https://repology.org/maintainer/mxkrsv%40disroot.org/feed-for-repo/alpine_edge/atom"; }
       { url = "https://alpinelinux.org/atom.xml"; }
       { url = "https://postmarketos.org/blog/feed.atom"; }
       { url = "https://www.opennet.ru/opennews/opennews_all_utf.rss"; }
