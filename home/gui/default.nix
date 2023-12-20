@@ -10,12 +10,19 @@
     xonotic-data
     libreoffice-fresh
     telegram-desktop
-    wireshark
 
     # fonts
     font-awesome
     jetbrains-mono
     dejavu_fonts
+
+    # pwn
+    wireshark
+    # hiPrio needed due to the conflict between the rz-ghidra from rizin and cutter
+    (lib.hiPrio (cutter.withPlugins (ps: with ps; [
+      rz-ghidra
+      sigdb
+    ])))
   ];
 
   programs.fuzzel = {
