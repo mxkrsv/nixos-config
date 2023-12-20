@@ -7,6 +7,9 @@
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # needed to unlock LUKS with key from TPM
+  boot.initrd.systemd.enable = true;
+
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr
     rocmPackages.clr.icd

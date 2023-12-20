@@ -12,8 +12,6 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.systemd.enable = true; # needed to unlock LUKS with key from TPM
-
   boot.kernelParams = [ ];
 
   fileSystems."/" =
