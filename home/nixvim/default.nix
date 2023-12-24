@@ -30,6 +30,8 @@
     plugins = {
       nix.enable = true;
 
+      typst-vim.enable = true;
+
       lualine = {
         enable = true;
         iconsEnabled = false;
@@ -82,6 +84,14 @@
                   onOpenAndSave = true;
                 };
               };
+            };
+          };
+
+          typst-lsp = {
+            enable = true;
+            rootDir = "function() return vim.fn.getcwd() end";
+            extraOptions = {
+              exportPdf = "onSave";
             };
           };
         };
