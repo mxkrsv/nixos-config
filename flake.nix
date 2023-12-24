@@ -40,6 +40,7 @@
           ({ ... }: { networking.hostName = "homura"; })
           ./system
           ./system/homura
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
 
