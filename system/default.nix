@@ -123,18 +123,22 @@
     neovim
   ];
 
-  # xdg-desktop-portal works by exposing a series of D-Bus interfaces
-  # known as portals under a well-known name
-  # (org.freedesktop.portal.Desktop) and object path
-  # (/org/freedesktop/portal/desktop).
-  # The portal interfaces include APIs for file access, opening URIs,
-  # printing and others.
   services.dbus.enable = true;
+
+  # xdg-desktop-portal (screen sharhing, file choosing, etc.)
   xdg.portal = {
     enable = true;
+
     wlr.enable = true;
+    configPackages = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-kde
+    ];
   };
 
   programs.light.enable = true;
@@ -182,7 +186,7 @@
   services.dbus.packages = [ pkgs.gcr ];
 
   # Fix swaylock
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   # Enable ucode updates
   hardware.enableRedistributableFirmware = true;
