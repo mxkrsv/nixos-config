@@ -136,7 +136,7 @@
 
       # enable colors
       autoload -Uz colors && colors
-      
+
       # default black comments are invisible on black bg
       #ZSH_HIGHLIGHT_STYLES[comment]=fg=cyan,bold
 
@@ -151,7 +151,7 @@
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -hAF --color=always "$realpath"'
       # switch group using `,` and `.`
       zstyle ':fzf-tab:*' switch-group ',' '.'
-      
+
       # set terminal title
       precmd() { print -Pn "\e]0;zsh %~%(1j, (%j job%(2j|s|)) ,)\e\\"; }
       preexec() { print -Pn "\e]0;$\{(q)1\}\e\\"; }
@@ -194,7 +194,7 @@
 
       # limit width so articles are more readable
       text-width 80
-      
+
       # based on /usr/share/doc/newsboat/contrib/colorschemes/gruvbox
       color background	color223	default
       color listnormal	color4		default
@@ -203,7 +203,7 @@
       color listfocus_unread	color223	color237	bold
       color info		color8		color0
       color article		color223	default
-      
+
       # highlights
       highlight article "^(Feed|Link):.*$" color11 default bold
       highlight article "^(Title|Date|Author):.*$" color11 default bold
@@ -303,30 +303,30 @@
 
       # default statusbar colors
       set-option -g status-style "fg=#bdae93,bg=#3c3836"
-      
+
       # default window title colors
       set-window-option -g window-status-style "fg=#bdae93,bg=default"
-      
+
       # active window title colors
       set-window-option -g window-status-current-style "fg=#fabd2f,bg=default"
-      
+
       # pane border
       set-option -g pane-border-style "fg=#b16286"
       set-option -g pane-active-border-style "fg=#8ec07c"
-      
+
       # message text
       set-option -g message-style "fg=#d5c4a1,bg=#3c3836"
-      
+
       # pane number display
       set-option -g display-panes-active-colour "#b8bb26"
       set-option -g display-panes-colour "#fabd2f"
-      
+
       # clock
       set-window-option -g clock-mode-colour "#b8bb26"
-      
+
       # copy mode highligh
       set-window-option -g mode-style "fg=#bdae93,bg=#504945"
-      
+
       # bell
       set-window-option -g window-status-bell-style "fg=#3c3836,bg=#fb4934"
     '';
