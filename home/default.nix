@@ -541,4 +541,7 @@
       };
     };
   };
+
+  # E.g. for "command not found"
+  programs.nix-index.enable = true;
 }
