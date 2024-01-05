@@ -62,7 +62,7 @@
   users.users.mxkrsv = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" "wireshark" "docker" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
