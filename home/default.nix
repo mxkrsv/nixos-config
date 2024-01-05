@@ -373,6 +373,14 @@
       # Disable greeting
       set fish_greeting
     '';
+
+    functions = {
+      # Render the short version of the prompt
+      # TODO: maybe show the command status (would have to use a postexec hook)
+      starship_transient_prompt_func = ''
+        starship module character
+      '';
+    };
   };
 
   programs.rbw = {
