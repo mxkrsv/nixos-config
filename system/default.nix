@@ -155,6 +155,7 @@
   };
 
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   security.polkit.enable = true;
 
