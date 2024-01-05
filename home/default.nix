@@ -261,6 +261,9 @@
         smtpencryption = "tls";
         smtpserverport = 587;
       };
+
+      # Unbreak mouse scrolling
+      core.pager = "less -+X";
     };
   };
 
