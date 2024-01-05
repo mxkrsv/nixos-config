@@ -18,9 +18,14 @@
     nixvim.url = "github:nix-community/nixvim";
 
     agenix.url = "github:ryantm/agenix";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, ... }@inputs: {
     nixosConfigurations = {
       sayaka = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -63,6 +68,7 @@
           ./home/gui
           nixvim.homeManagerModules.nixvim
           agenix.homeManagerModules.age
+          nix-index-database.hmModules.nix-index
         ];
       };
 
@@ -74,6 +80,7 @@
           ./home/gui
           nixvim.homeManagerModules.nixvim
           agenix.homeManagerModules.age
+          nix-index-database.hmModules.nix-index
         ];
       };
 
@@ -84,6 +91,7 @@
           ./home
           ./home/gui
           nixvim.homeManagerModules.nixvim
+          nix-index-database.hmModules.nix-index
         ];
       };
     };
