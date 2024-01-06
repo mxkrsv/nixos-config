@@ -22,7 +22,7 @@
   home.packages = with pkgs; [
     # text programs
     cmus
-    neofetch
+    fastfetch
     texlive.combined.scheme-full
     libqalculate
     gnupg
@@ -88,9 +88,9 @@
   };
 
   xdg.configFile = {
-    neofetch = {
-      source = ./files/neofetch.conf;
-      target = "neofetch/config.conf";
+    fastfetch = {
+      source = ./files/fastfetch.jsonc;
+      target = "fastfetch/config.jsonc";
     };
   };
 
