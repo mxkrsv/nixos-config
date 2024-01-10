@@ -15,6 +15,8 @@
     rocmPackages.clr.icd
   ];
 
+  hardware.bluetooth.enable = true;
+
   services.fprintd = {
     enable = true;
   };
