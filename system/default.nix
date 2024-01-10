@@ -18,16 +18,25 @@
     };
   };
 
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;
+  networking = {
+    # Pick only one of the below networking options.
+    # wireless.enable = true;
+    networkmanager.enable = true;
+
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
+
+    # I play CTF
+    firewall.enable = false;
+
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -49,13 +58,6 @@
   sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
     isNormalUser = true;
@@ -63,20 +65,35 @@
     shell = pkgs.fish;
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-
   # List services that you want to enable:
+  services = {
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+    dbus = {
+      enable = true;
+      packages = [ pkgs.gcr ];
+    };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+          user = "greeter";
+        };
+      };
+      vt = 7;
+    };
+
+    fwupd.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
@@ -92,6 +109,8 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  environment.defaultPackages = [ ];
 
   environment.systemPackages = with pkgs; [
     # system
@@ -121,8 +140,6 @@
     neovim
   ];
 
-  services.dbus.enable = true;
-
   # xdg-desktop-portal (screen sharhing, file choosing, etc.)
   xdg.portal = {
     enable = true;
@@ -139,53 +156,43 @@
     ];
   };
 
-  programs.light.enable = true;
+  security = {
+    polkit.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
-      };
-    };
-    vt = 7;
+    sudo.enable = true;
+
+    # Fix swaylock
+    pam.services.swaylock = { };
+
+    # Needed for PipeWire
+    rtkit.enable = true;
   };
 
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
+  programs = {
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # programs.mtr.enable = true;
 
-  security.polkit.enable = true;
+    light.enable = true;
 
-  security.sudo.enable = true;
+    zsh.enable = true;
+    fish.enable = true;
 
-  environment.defaultPackages = [ ];
+    dconf.enable = true;
 
-  programs.dconf.enable = true;
+    kdeconnect.enable = true;
 
-  services.fwupd.enable = true;
+    adb.enable = true;
+
+    wireshark.enable = true;
+  };
 
   virtualisation = {
     #podman.enable = true;
     docker.enable = true;
   };
-
-  programs.kdeconnect.enable = true;
-
-  programs.adb.enable = true;
-
-  programs.wireshark.enable = true;
-
-  # allow root to edit hosts directly (will reset after system rebuild)
+  # Allow root to edit hosts directly (will reset after system rebuild)
   environment.etc.hosts.mode = "0644";
-
-  # I play CTF
-  networking.firewall.enable = false;
-
-  services.dbus.packages = [ pkgs.gcr ];
-
-  # Fix swaylock
-  security.pam.services.swaylock = { };
 
   # Enable ucode updates
   hardware.enableRedistributableFirmware = true;
