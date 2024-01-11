@@ -520,4 +520,10 @@
     platformTheme = "gnome";
     style.name = "adwaita-dark";
   };
+
+  # Imperative (for now) file synchronization
+  services.syncthing = {
+    enable = true;
+    tray.enable = true;
+  };
 }
