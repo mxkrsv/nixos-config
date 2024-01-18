@@ -26,74 +26,54 @@
   };
 
   outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, ... }@inputs: {
-    nixosConfigurations = {
-      sayaka = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ({ ... }: { networking.hostName = "sayaka"; })
-          ./system
+    nixosConfigurations =
+      let
+        makeNixosConfiguration = name: modules: nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ({ ... }: { networking.hostName = name; })
+            ./system
+          ] ++ modules;
+        };
+      in
+      {
+        fallback = makeNixosConfiguration "fallback-hostname" [ ];
+
+        sayaka = makeNixosConfiguration "sayaka" [
           ./system/sayaka
           lanzaboote.nixosModules.lanzaboote
         ];
-      };
 
-      homura = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ({ ... }: { networking.hostName = "homura"; })
-          ./system
+        homura = makeNixosConfiguration "homura" [
           ./system/homura
           lanzaboote.nixosModules.lanzaboote
         ];
       };
 
-      default = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ({ ... }: { networking.hostName = "fallback-hostname"; })
-          ./system
-        ];
-      };
-    };
+    homeConfigurations =
+      let
+        makeHomeConfiguration = modules: home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./home
+            ./home/gui
+            nixvim.homeManagerModules.nixvim
+            nix-index-database.hmModules.nix-index
+          ] ++ modules;
+        };
+      in
+      {
+        "mxkrsv@fallback-hostname" = makeHomeConfiguration [ ];
 
-    homeConfigurations = {
-      "mxkrsv@sayaka" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home
-          ./home/gui
-          nixvim.homeManagerModules.nixvim
+        "mxkrsv@sayaka" = makeHomeConfiguration [
           agenix.homeManagerModules.age
-          nix-index-database.hmModules.nix-index
         ];
-      };
 
-      "mxkrsv@homura" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home
-          ./home/gui
-          nixvim.homeManagerModules.nixvim
+        "mxkrsv@homura" = makeHomeConfiguration [
           agenix.homeManagerModules.age
-          nix-index-database.hmModules.nix-index
         ];
       };
-
-      "mxkrsv@default" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home
-          ./home/gui
-          nixvim.homeManagerModules.nixvim
-          nix-index-database.hmModules.nix-index
-        ];
-      };
-    };
   };
 }
