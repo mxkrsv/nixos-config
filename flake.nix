@@ -23,9 +23,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, stylix, ... }@inputs: {
     nixosConfigurations =
       let
         makeNixosConfiguration = name: modules: nixpkgs.lib.nixosSystem {
@@ -61,6 +63,7 @@
             ./home/gui
             nixvim.homeManagerModules.nixvim
             nix-index-database.hmModules.nix-index
+            stylix.homeManagerModules.stylix
           ] ++ modules;
         };
       in
