@@ -86,12 +86,6 @@
     };
   };
 
-  home.pointerCursor = {
-    name = "Adwaita";
-    size = 24;
-    package = pkgs.gnome3.adwaita-icon-theme;
-  };
-
   xdg.configFile = {
     fastfetch = {
       source = ./files/fastfetch.jsonc;

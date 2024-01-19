@@ -50,62 +50,6 @@
         }
       ];
 
-      colors =
-        let
-          black = "#282828";
-          red = "#cc241d";
-          green = "#98971a";
-          yellow = "#d79921";
-          blue = "#458588";
-          purple = "#b16286";
-          aqua = "#689d6a";
-          gray = "#a89984";
-          brgray = "#928374";
-          brred = "#fb4934";
-          brgreen = "#b8bb26";
-          bryellow = "#fabd2f";
-          brblue = "#83a598";
-          brpurple = "#d3869b";
-          braqua = "#8ec07c";
-          white = "#ebdbb2";
-
-          a = "e0";
-          focused = braqua;
-          inactive = purple;
-          unfocused = black;
-          urgent = yellow;
-        in
-        {
-          focused = {
-            border = focused;
-            background = focused;
-            text = black;
-            indicator = brred;
-            childBorder = "";
-          };
-          focusedInactive = {
-            border = inactive;
-            background = inactive;
-            text = white;
-            indicator = red;
-            childBorder = "";
-          };
-          unfocused = {
-            border = unfocused;
-            background = unfocused;
-            text = white;
-            indicator = red;
-            childBorder = "";
-          };
-          urgent = {
-            border = urgent;
-            background = urgent;
-            text = black;
-            indicator = red;
-            childBorder = "";
-          };
-        };
-
       floating = {
         border = 2;
         titlebar = true;
@@ -127,7 +71,6 @@
 
       fonts = {
         names = [ "JetBrains Mono" ];
-        size = 10.0;
       };
 
       gaps = {
@@ -138,9 +81,6 @@
       };
 
       output = {
-        "*" = {
-          bg = "`find ~/.wallpaper -type f | shuf -n1` fill #282828";
-        };
         "AU Optronics 0x408D Unknown" = {
           scale = "1.5";
         };

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -228,6 +228,6 @@
       };
     };
 
-    style = ./waybar.css;
+    #style = ./waybar.css;
   };
 }
