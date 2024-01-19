@@ -11,22 +11,22 @@
 /* Styles */
 
 /* Colors (gruvbox) */
-@define-color black	#282828;
-@define-color red	#cc241d;
-@define-color green	#98971a;
-@define-color yellow	#d79921;
-@define-color blue	#458588;
-@define-color purple	#b16286;
-@define-color aqua	#689d6a;
-@define-color gray	#a89984;
-@define-color brgray	#928374;
-@define-color brred	#fb4934;
-@define-color brgreen	#b8bb26;
-@define-color bryellow	#fabd2f;
-@define-color brblue	#83a598;
-@define-color brpurple	#d3869b;
-@define-color braqua	#8ec07c;
-@define-color white	#ebdbb2;
+@define-color black	@base00;
+@define-color red	@base01;
+@define-color green	@base02;
+@define-color yellow	@base03;
+@define-color blue	@base04;
+@define-color purple	@base05;
+@define-color aqua	@base06;
+@define-color gray	@base07;
+@define-color brgray	@base08;
+@define-color brred	@base09;
+@define-color brgreen	@base0A;
+@define-color bryellow	@base0B;
+@define-color brblue	@base0C;
+@define-color brpurple	@base0D;
+@define-color braqua	@base0E;
+@define-color white	@base0F;
 @define-color bg2	#504945;
 
 
