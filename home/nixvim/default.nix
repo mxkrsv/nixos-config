@@ -90,7 +90,7 @@
           typst-lsp = {
             enable = true;
             rootDir = "function() return vim.fn.getcwd() end";
-            extraOptions = {
+            extraOptions.settings = {
               exportPdf = "onSave";
             };
           };
