@@ -275,7 +275,7 @@
       seat = {
         "*" = {
           hide_cursor = "4000";
-          idle_wake = "keyboard";
+          idle_inhibit = "keyboard touch switch";
           xcursor_theme = "Adwaita 24";
         };
       };
