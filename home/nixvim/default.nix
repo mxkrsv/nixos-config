@@ -4,14 +4,13 @@
 
     colorschemes.gruvbox = {
       enable = true;
-      trueColor = true;
-      transparentBg = true;
-      italics = true;
-      bold = true;
-      underline = true;
+      settings = {
+        transparent_mode = true;
+        dim_inactive = true;
+      };
     };
 
-    highlight = { Normal.bg = "none"; };
+    #highlight = { Normal.bg = "none"; };
 
     options = {
       number = true;
