@@ -56,7 +56,7 @@
 
   # Enable sound.
   sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
@@ -75,16 +75,16 @@
       packages = [ pkgs.gcr ];
     };
 
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-          user = "greeter";
-        };
-      };
-      vt = 7;
-    };
+    #greetd = {
+    #  enable = true;
+    #  settings = {
+    #    default_session = {
+    #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+    #      user = "greeter";
+    #    };
+    #  };
+    #  vt = 7;
+    #};
 
     fwupd.enable = true;
 
@@ -138,23 +138,26 @@
     xdg-utils
     wl-clipboard
     neovim
+
+    # for virtiofs in virt-manager
+    virtiofsd
   ];
 
   # xdg-desktop-portal (screen sharhing, file choosing, etc.)
-  xdg.portal = {
-    enable = true;
+  #xdg.portal = {
+  #  enable = true;
 
-    wlr.enable = true;
-    configPackages = with pkgs; [
-      xdg-desktop-portal-wlr
-    ];
+  #  wlr.enable = true;
+  #  configPackages = with pkgs; [
+  #    xdg-desktop-portal-wlr
+  #  ];
 
-    # gtk portal needed to make gtk apps happy
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-kde
-    ];
-  };
+  #  # gtk portal needed to make gtk apps happy
+  #  extraPortals = with pkgs; [
+  #    xdg-desktop-portal-gtk
+  #    xdg-desktop-portal-kde
+  #  ];
+  #};
 
   security = {
     polkit.enable = true;
@@ -185,15 +188,28 @@
     adb.enable = true;
 
     wireshark.enable = true;
+
+    virt-manager.enable = true;
   };
 
   virtualisation = {
     #podman.enable = true;
     docker.enable = true;
+
+    libvirtd = {
+      enable = true;
+    };
   };
+
   # Allow root to edit hosts directly (will reset after system rebuild)
   environment.etc.hosts.mode = "0644";
 
   # Enable ucode updates
   hardware.enableRedistributableFirmware = true;
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  services.power-profiles-daemon.enable = false;
 }
