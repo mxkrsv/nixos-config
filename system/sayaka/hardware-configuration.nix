@@ -12,7 +12,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.kernelParams = [ ];
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=1" ];
 
   fileSystems."/" =
     {
