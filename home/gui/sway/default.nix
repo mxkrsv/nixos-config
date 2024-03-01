@@ -9,6 +9,9 @@
       export SDL_VIDEODRIVER=wayland
       export GTK_THEME=Adwaita:dark
 
+      # fix some java apps
+      export _JAVA_AWT_WM_NONREPARENTING=1
+
       # home-manager home.sessionVariables
       source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
     '';
@@ -300,8 +303,8 @@
              swipe:3:up floating toggle
       
              # Scratchpad
-             pinch:2:inward+down move scratchpad
-             pinch:2:outward+up scratchpad show
+             #pinch:2:inward+down move scratchpad
+             #pinch:2:outward+up scratchpad show
       
              # Move active window
              swipe:4:left move left
