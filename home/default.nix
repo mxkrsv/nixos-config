@@ -326,7 +326,7 @@
     enable = true;
     settings = {
       email = "mxkrsv@disroot.org";
-      pinentry = "gnome3";
+      pinentry = pkgs.pinentry.gnome3;
     };
   };
 
