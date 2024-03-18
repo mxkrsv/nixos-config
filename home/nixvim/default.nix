@@ -125,53 +125,55 @@
         };
       };
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
 
-        snippet.expand = "luasnip";
+        settings = {
+          snippet.expand = "luasnip";
 
-        sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "luasnip"; }
-          { name = "buffer"; }
-          { name = "treesitter"; }
-        ];
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "luasnip"; }
+            { name = "buffer"; }
+            { name = "treesitter"; }
+          ];
 
-        mapping = {
-          "<CR>" = "cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace }";
-          "<Tab>" = {
-            modes = [ "i" "s" ];
-            action = ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_next_item()
-                elseif require'luasnip'.expand_or_jumpable() then
-                  require'luasnip'.expand_or_jump()
-                else
-                  fallback()
-                end
-              end
+          mapping = {
+            "<CR>" = "cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace }";
+            "<Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if cmp.visible() then
+                    cmp.select_next_item()
+                  elseif require'luasnip'.expand_or_jumpable() then
+                    require'luasnip'.expand_or_jump()
+                  else
+                    fallback()
+                  end
+                end,
+                {'i', 's'}
+              )
             '';
-          };
-          "<S-Tab>" = {
-            modes = [ "i" "s" ];
-            action = ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_prev_item()
-                elseif require'luasnip'.jumpable(-1) then
-                  require'luasnip'.jump(-1)
-                else
-                  fallback()
-                end
-              end
+            "<S-Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if cmp.visible() then
+                    cmp.select_prev_item()
+                  elseif require'luasnip'.jumpable(-1) then
+                    require'luasnip'.jump(-1)
+                  else
+                    fallback()
+                  end
+                end,
+                {'i', 's'}
+              )
             '';
+            "<C-e>" = "cmp.mapping.abort()";
+            "<C-Space>" = "cmp.mapping.complete";
+            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-f" = "cmp.mapping.scroll_docs(4)";
           };
-          "<C-e>" = "cmp.mapping.abort()";
-          "<C-Space>" = "cmp.mapping.complete";
-          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f" = "cmp.mapping.scroll_docs(4)";
         };
       };
 
