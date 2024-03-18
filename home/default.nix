@@ -160,11 +160,6 @@
     enableZshIntegration = true;
   };
 
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-  };
-
   services.ssh-agent.enable = true;
 
   programs.lf = {
