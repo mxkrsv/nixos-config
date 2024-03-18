@@ -148,6 +148,9 @@
       osd-color = "#ebdbb2";
       osd-border-color = "#282828";
     };
+    scripts = [
+      pkgs.mpvScripts.mpris
+    ];
   };
 
   services.mako = {
