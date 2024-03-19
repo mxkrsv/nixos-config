@@ -8,4 +8,6 @@ in
 {
   "gh_hosts.age".publicKeys = users;
   "glab_config.age".publicKeys = users;
+
+  "singbox_uuid_mxkrsv".publicKeys = users ++ systems;
 }
