@@ -34,6 +34,7 @@
           modules = [
             ({ ... }: { networking.hostName = name; })
             ./system
+
           ] ++ modules;
         };
       in
@@ -43,11 +44,13 @@
         sayaka = makeNixosConfiguration "sayaka" [
           ./system/sayaka
           lanzaboote.nixosModules.lanzaboote
+          agenix.nixosModules.age
         ];
 
         homura = makeNixosConfiguration "homura" [
           ./system/homura
           lanzaboote.nixosModules.lanzaboote
+          agenix.nixosModules.age
         ];
       };
 
