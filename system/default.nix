@@ -1,6 +1,7 @@
 { lib, pkgs, inputs, ... }: {
   imports = [
     ./secrets.nix
+    ./sing-box.nix
   ];
 
   nix = {
