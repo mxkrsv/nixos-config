@@ -1,4 +1,8 @@
 { lib, pkgs, inputs, ... }: {
+  imports = [
+    ./secrets.nix
+  ];
+
   nix = {
     # make nix3 commands consistent with the flake
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
