@@ -66,7 +66,16 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "adbusers" "wireshark" "docker" ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "networkmanager"
+      "adbusers"
+      "wireshark"
+      "docker"
+      "dialout"
+    ];
     shell = pkgs.fish;
   };
 
