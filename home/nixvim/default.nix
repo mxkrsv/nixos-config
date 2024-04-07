@@ -12,7 +12,7 @@
 
     #highlight = { Normal.bg = "none"; };
 
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       incsearch = true;
@@ -73,7 +73,7 @@
                 build = {
                   onSave = true;
                   forwardSearchAfter = true;
-                  args = [ "-xelatex" ];
+                  #args = [ "-xelatex" ];
                 };
                 forwardSearch = {
                   executable = "zathura";
