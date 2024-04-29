@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }: {
   wayland.windowManager.sway = {
     enable = true;
+
+    # Unbreak the backticks (home-manager#5311)
+    checkConfig = false;
+
     systemd.enable = true;
 
     extraSessionCommands = ''
