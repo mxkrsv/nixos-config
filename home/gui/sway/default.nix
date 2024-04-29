@@ -13,7 +13,7 @@
       export _JAVA_AWT_WM_NONREPARENTING=1
 
       # home-manager home.sessionVariables
-      source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+      source ${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh
     '';
 
     swaynag = {
