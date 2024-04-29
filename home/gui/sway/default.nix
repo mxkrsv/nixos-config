@@ -153,6 +153,12 @@
         "AU Optronics 0x408D Unknown" = {
           scale = "1.5";
         };
+        "BNQ BenQ BL2480 H1J0087401Q" = {
+          position = "0,0";
+        };
+        "BNQ BenQ GW2480 L1M0533101Q" = {
+          position = "1920,0";
+        };
       };
 
       input = {
