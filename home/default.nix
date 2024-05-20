@@ -13,7 +13,6 @@
     ./zsh
 
     ./apps
-    ./sway
   ];
 
   home = {
