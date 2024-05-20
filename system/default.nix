@@ -75,6 +75,7 @@
       "wireshark"
       "docker"
       "dialout"
+      "libvirtd"
     ];
     shell = pkgs.fish;
   };
@@ -210,4 +211,8 @@
 
   # Enable ucode updates
   hardware.enableRedistributableFirmware = true;
+
+  # Virt-manager
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 }
