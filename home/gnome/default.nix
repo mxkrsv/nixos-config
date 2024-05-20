@@ -92,5 +92,9 @@
       move-to-workspace-10 = [ "<Super><Shift>0" ];
       move-to-workspace-last = [ "<Super><Shift>End" ];
     };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      tap-to-click = true;
+    };
   };
 }
