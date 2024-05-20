@@ -1,4 +1,8 @@
 { config, pkgs, lib, ... }: {
+  imports = [
+    ./waybar
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
 

@@ -61,7 +61,6 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [
             ./home
-            ./home/gui
             nixvim.homeManagerModules.nixvim
             nix-index-database.hmModules.nix-index
           ] ++ modules;

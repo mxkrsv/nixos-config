@@ -11,6 +11,9 @@
 
     ./starship
     ./zsh
+
+    ./apps
+    ./sway
   ];
 
   home = {

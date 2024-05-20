@@ -1,9 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ./sway
-    ./waybar
-  ];
-
   home.packages = with pkgs; [
     gimp
     xonotic
