@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     ./apps
   ];
@@ -24,6 +24,10 @@
 
     "org/gnome/desktop/input-sources" = {
       xkb-options = [ "terminate:ctrl_alt_bksp" "grp:caps_toggle" ];
+      sources = [
+        (lib.hm.gvariant.mkTuple [ "xkb" "us" ])
+        (lib.hm.gvariant.mkTuple [ "xkb" "ru" ])
+      ];
     };
 
     "org/gnome/mutter" = {
