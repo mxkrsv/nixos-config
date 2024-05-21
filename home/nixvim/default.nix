@@ -96,14 +96,17 @@
 
         keymaps = {
           diagnostic = {
+            # Mapped by default to "<C-W>d" in 0.10+, but that one is more convenient
             "<space>e" = "open_float";
-            "[d" = "goto_prev";
-            "]d" = "goto_next";
+            # Added by default in Nvim 0.10
+            #"[d" = "goto_prev";
+            #"]d" = "goto_next";
             "<space>q" = "setloclist";
           };
 
           lspBuf = {
-            K = "hover";
+            # Added by default in Nvim 0.10
+            #K = "hover";
             gD = "declaration";
             gd = "definition";
             gi = "implementation";
