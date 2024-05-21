@@ -1,8 +1,6 @@
 { pkgs, ... }: {
-
-  home.packages = with pkgs; [
-    # A task manager
-    endeavour
+  imports = [
+    ./apps
   ];
 
   programs.gnome-shell = {
