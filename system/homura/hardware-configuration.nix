@@ -56,7 +56,7 @@
       options = [ "subvol=code" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/home/mxkrsv/music" =
+  fileSystems."/home/mxkrsv/Music" =
     {
       device = "/dev/disk/by-uuid/fdb02358-2703-435c-80ab-0a2ebf642d80";
       fsType = "btrfs";
