@@ -226,4 +226,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.power-profiles-daemon.enable = false;
+
+  # Fancy boot splash screen
+  boot.plymouth.enable = true;
 }
