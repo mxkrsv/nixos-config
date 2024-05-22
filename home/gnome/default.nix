@@ -13,6 +13,9 @@
       {
         package = pkgs.gnomeExtensions.gsconnect;
       }
+      {
+        package = pkgs.gnomeExtensions.vitals;
+      }
     ];
   };
 
