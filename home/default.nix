@@ -324,25 +324,6 @@
     };
   };
 
-  # Calendar things
-  programs = {
-    khal = {
-      enable = true;
-
-      locale = {
-        timeformat = "%H:%M";
-        dateformat = "%d.%m";
-        longdateformat = "%d.%m.%Y";
-        datetimeformat = "%d.%m %H:%M";
-        longdatetimeformat = "%d.%m.%Y %H:%M";
-      };
-    };
-
-    vdirsyncer = {
-      enable = true;
-    };
-  };
-
   # E.g. for "command not found"
   programs.nix-index.enable = true;
 
