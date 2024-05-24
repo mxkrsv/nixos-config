@@ -197,7 +197,7 @@
 
     dconf.enable = true;
 
-    kdeconnect.enable = true;
+    #kdeconnect.enable = true;
 
     adb.enable = true;
 
