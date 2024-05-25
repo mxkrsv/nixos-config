@@ -149,4 +149,38 @@
       };
     };
   };
+
+  programs.zathura = {
+    enable = true;
+    options = {
+      font = "JetBrains Mono 11";
+      selection-clipboard = "clipboard";
+      synctex-editor-command = "footclient nvim";
+
+      #recolor = true;
+      recolor-keephue = false;
+
+      # base16 gruvbox
+      default-bg = "#282828";
+      default-fg = "#3c3836";
+      statusbar-fg = "#bdae93";
+      statusbar-bg = "#504945";
+      inputbar-bg = "#282828";
+      inputbar-fg = "#fbf1c7";
+      notification-bg = "#282828";
+      notification-fg = "#fbf1c7";
+      notification-error-bg = "#282828";
+      notification-error-fg = "#fb4934";
+      notification-warning-bg = "#282828";
+      notification-warning-fg = "#fb4934";
+      highlight-color = "#fabd2f";
+      highlight-active-color = "#83a598";
+      completion-bg = "#3c3836";
+      completion-fg = "#83a598";
+      completion-highlight-fg = "#fbf1c7";
+      completion-highlight-bg = "#83a598";
+      recolor-lightcolor = "#282828";
+      recolor-darkcolor = "#ebdbb2";
+    };
+  };
 }
