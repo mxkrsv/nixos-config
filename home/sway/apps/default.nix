@@ -136,4 +136,17 @@
       pkgs.mpvScripts.mpris
     ];
   };
+
+  programs.imv = {
+    enable = true;
+    settings = {
+      options = {
+        background = "282828";
+        overlay_text_color = "ebdbb2";
+        overlay_background_color = "282828";
+        overlay_background_alpha = "e0";
+        overlay_font = "JetBrains Mono:11";
+      };
+    };
+  };
 }
