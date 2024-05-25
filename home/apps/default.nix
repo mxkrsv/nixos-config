@@ -105,19 +105,6 @@
     };
   };
 
-  programs.mpv = {
-    enable = true;
-    config = {
-      osd-font = "JetBrains Mono";
-      osd-font-size = 20;
-      osd-color = "#ebdbb2";
-      osd-border-color = "#282828";
-    };
-    scripts = [
-      pkgs.mpvScripts.mpris
-    ];
-  };
-
   programs.foot = {
     enable = true;
     #server.enable = true; // can't execute desktop files in that case
