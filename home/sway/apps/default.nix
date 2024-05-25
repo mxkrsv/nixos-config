@@ -56,4 +56,9 @@
     longitude = "30";
     temperature.night = 4500;
   };
+
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 }
