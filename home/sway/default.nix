@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
   imports = [
     ./waybar
+    ./apps
   ];
 
   wayland.windowManager.sway = {
