@@ -49,4 +49,11 @@
       }
     ];
   };
+
+  services.wlsunset = {
+    enable = true;
+    latitude = "60";
+    longitude = "30";
+    temperature.night = 4500;
+  };
 }
