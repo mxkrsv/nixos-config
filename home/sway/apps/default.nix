@@ -183,4 +183,49 @@
       recolor-darkcolor = "#ebdbb2";
     };
   };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      font = "JetBrains Mono";
+      font-size = 20;
+      show-failed-attempts = true;
+      daemonize = true;
+      color = "282828";
+
+      separator-color = "282828";
+      layout-bg-color = "d3869b";
+      layout-border-color = "b16286";
+      layout-text-color = "282828";
+
+      bs-hl-color = "fb4934";
+      key-hl-color = "b8bb26";
+      inside-color = "d3869b";
+      line-color = "282828";
+      ring-color = "b16286";
+      text-color = "282828";
+
+      caps-lock-bs-hl-color = "cc241d";
+      caps-lock-key-hl-color = "98971a";
+      inside-caps-lock-color = "83a598";
+      line-caps-lock-color = "ebdbb2";
+      ring-caps-lock-color = "458588";
+      text-caps-lock-color = "282828";
+
+      inside-clear-color = "8ec07c";
+      line-clear-color = "282828";
+      ring-clear-color = "689d6a";
+      text-clear-color = "282828";
+
+      inside-ver-color = "fabd2f";
+      line-ver-color = "282828";
+      ring-ver-color = "d79921";
+      text-ver-color = "282828";
+
+      inside-wrong-color = "fb4934";
+      line-wrong-color = "282828";
+      ring-wrong-color = "cc241d";
+      text-wrong-color = "282828";
+    };
+  };
 }
