@@ -394,43 +394,6 @@
     '';
   };
 
-  services.swayidle = {
-    enable = true;
-    events = [
-      {
-        event = "before-sleep";
-        command = "${pkgs.playerctl}/bin/playerctl -a pause; ${pkgs.swaylock}/bin/swaylock";
-      }
-      {
-        event = "lock";
-        command = "${pkgs.swaylock}/bin/swaylock";
-      }
-      {
-        event = "unlock";
-        command = "${pkgs.procps}/bin/pkill -USR1 swaylock";
-      }
-    ];
-    extraArgs = [
-      "idlehint 1200"
-    ];
-    timeouts = [
-      {
-        # turn the screen off quickly if the screen was locked manually
-        timeout = 15;
-        command = "${pkgs.procps}/bin/pgrep -x swaylock && \\
-          ${pkgs.sway}/bin/swaymsg 'output * power off'";
-        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
-      }
-      {
-        timeout = 900;
-        command = "${pkgs.chayang}/bin/chayang -d10 && \\
-          ${pkgs.sway}/bin/swaymsg 'output * power off' && \\
-          ${pkgs.swaylock}/bin/swaylock";
-        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
-      }
-    ];
-  };
-
   #xdg.mimeApps = {
   #  enable = true;
   #  defaultApplications = {
