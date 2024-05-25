@@ -152,6 +152,9 @@
     xdg-utils
     wl-clipboard
     neovim
+
+    # for virtiofs in virt-manager
+    virtiofsd
   ];
 
   # xdg-desktop-portal (screen sharhing, file choosing, etc.)
@@ -199,11 +202,17 @@
     adb.enable = true;
 
     wireshark.enable = true;
+
+    virt-manager.enable = true;
   };
 
   virtualisation = {
     #podman.enable = true;
     docker.enable = true;
+
+    libvirtd = {
+      enable = true;
+    };
   };
 
   # Allow root to edit hosts directly (will reset after system rebuild)
