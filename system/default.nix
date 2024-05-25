@@ -155,20 +155,20 @@
   ];
 
   # xdg-desktop-portal (screen sharhing, file choosing, etc.)
-  xdg.portal = {
-    enable = true;
+  #xdg.portal = {
+  #  enable = true;
 
-    wlr.enable = true;
-    configPackages = with pkgs; [
-      xdg-desktop-portal-wlr
-    ];
+  #  wlr.enable = true;
+  #  configPackages = with pkgs; [
+  #    xdg-desktop-portal-wlr
+  #  ];
 
-    # gtk portal needed to make gtk apps happy
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-kde
-    ];
-  };
+  #  # gtk portal needed to make gtk apps happy
+  #  extraPortals = with pkgs; [
+  #    xdg-desktop-portal-gtk
+  #    xdg-desktop-portal-kde
+  #  ];
+  #};
 
   security = {
     polkit.enable = true;
@@ -205,6 +205,7 @@
     #podman.enable = true;
     docker.enable = true;
   };
+
   # Allow root to edit hosts directly (will reset after system rebuild)
   environment.etc.hosts.mode = "0644";
 
