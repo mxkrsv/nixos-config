@@ -432,12 +432,6 @@
     };
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
   programs.chromium = {
     enable = true;
     commandLineArgs = [

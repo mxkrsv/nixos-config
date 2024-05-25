@@ -20,6 +20,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
       scaling-factor = 1.5;
     };
 
