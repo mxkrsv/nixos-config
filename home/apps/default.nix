@@ -20,43 +20,6 @@
     #])))
   ];
 
-  programs.fuzzel = {
-    enable = true;
-    settings = {
-      main = {
-        font = "JetBrains Mono:size=11";
-        dpi-aware = false;
-        prompt = "'> '";
-        terminal = "footclient";
-        launch-prefix = "swaymsg exec --";
-
-        lines = 20;
-        width = 60;
-        horizontal-pad = 8;
-        vertical-pad = 4;
-        inner-pad = 4;
-
-        exit-on-keyboard-focus-loss = false;
-      };
-      colors = {
-        background = "282828e0";
-        text = "ebdbb2ff";
-        match = "98971aff";
-        selection = "ebdbb2ff";
-        selection-text = "282828ff";
-        border = "8ec07cff";
-      };
-      border = {
-        width = 3;
-        radius = 0;
-      };
-      key-bindings = {
-        next = "Mod1+j Down Control+n";
-        prev = "Mod1+k Up Control+p";
-      };
-    };
-  };
-
   programs.imv = {
     enable = true;
     settings = {
