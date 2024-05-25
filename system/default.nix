@@ -89,16 +89,16 @@
       packages = [ pkgs.gcr ];
     };
 
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-          user = "greeter";
-        };
-      };
-      vt = 7;
-    };
+    #greetd = {
+    #  enable = true;
+    #  settings = {
+    #    default_session = {
+    #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+    #      user = "greeter";
+    #    };
+    #  };
+    #  vt = 7;
+    #};
 
     fwupd.enable = true;
 
