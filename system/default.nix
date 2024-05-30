@@ -208,7 +208,15 @@
 
   virtualisation = {
     #podman.enable = true;
-    docker.enable = true;
+    docker = {
+      enable = true;
+
+      daemon.settings = {
+        registry-mirrors = [
+          "https://mirror.gcr.io"
+        ];
+      };
+    };
 
     libvirtd = {
       enable = true;
