@@ -2,6 +2,8 @@
   home.packages = with pkgs; [
     # A task manager
     endeavour
+    # A news reader
+    newsflash
   ];
 
   xdg.mimeApps = {
