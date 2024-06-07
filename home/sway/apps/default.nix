@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./aerc
+  ];
+
   services.mako = {
     enable = true;
     font = "JetBrains Mono 11";

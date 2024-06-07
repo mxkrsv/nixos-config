@@ -7,7 +7,6 @@
     ./age
 
     ./accounts
-    ./aerc
 
     ./starship
     ./zsh
