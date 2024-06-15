@@ -4,6 +4,8 @@
     endeavour
     # A news reader
     newsflash
+    # A torrent client
+    fragments
   ];
 
   xdg.mimeApps = {
