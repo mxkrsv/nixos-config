@@ -6,6 +6,8 @@
     newsflash
     # A torrent client
     fragments
+    # A translation app
+    dialect
   ];
 
   xdg.mimeApps = {
