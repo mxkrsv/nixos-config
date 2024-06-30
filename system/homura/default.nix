@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -11,12 +11,15 @@
   # needed to unlock LUKS with key from TPM
   boot.initrd.systemd.enable = true;
 
-  # vaapi
-  hardware.opengl = {
+  # VAAPI and ROCm
+  hardware.graphics = {
     extraPackages = with pkgs; [
       intel-media-driver
+      rocmPackages.clr
+      rocmPackages.clr.icd
     ];
   };
+  nixpkgs.config.rocmSupport = true;
 
   # lanzaboote
 
