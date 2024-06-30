@@ -57,7 +57,8 @@
   hardware.graphics.enable = true;
 
   # Enable sound.
-  sound.enable = true;
+  # No real need to save the state on reboot
+  #sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
