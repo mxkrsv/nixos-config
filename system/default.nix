@@ -54,10 +54,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
+  hardware.graphics.enable = true;
 
   # Enable sound.
   sound.enable = true;
