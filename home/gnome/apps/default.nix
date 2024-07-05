@@ -8,6 +8,8 @@
     fragments
     # A translation app
     dialect
+    # A notes app with Nextcloud Notes sync
+    iotas
   ];
 
   xdg.mimeApps = {
