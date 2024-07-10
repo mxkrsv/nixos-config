@@ -386,4 +386,6 @@
       c.colors.tabs.selected.even.bg = fg
     '';
   };
+
+  services.syncthing.tray.enable = true;
 }
