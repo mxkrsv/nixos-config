@@ -12,7 +12,7 @@
   # needed to unlock LUKS with key from TPM
   boot.initrd.systemd.enable = true;
 
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr
     rocmPackages.clr.icd
   ];
