@@ -17,8 +17,8 @@
     rocmPackages.clr.icd
   ];
   nixpkgs.config.rocmSupport = true;
-  # Force gfx1030 which is the closest to my RX 6400 (gfx1034)
-  services.ollama.rocmOverrideGfx = "10.3.0";
+  # Force gfx900 which is the closest to my igpu (gfx90c)
+  services.ollama.rocmOverrideGfx = "9.0.0";
 
   hardware.bluetooth.enable = true;
 
