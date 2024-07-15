@@ -144,7 +144,6 @@
     usbutils
 
     # non-essential programs
-    gnome3.adwaita-icon-theme
     pulsemixer
     git
     xdg-utils
