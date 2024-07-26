@@ -23,6 +23,7 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       scaling-factor = 1.5;
+      show-battery-percentage = true;
     };
 
     "org/gnome/desktop/input-sources" = {
