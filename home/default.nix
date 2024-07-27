@@ -86,12 +86,6 @@
     };
   };
 
-  home.pointerCursor = {
-    name = "Adwaita";
-    size = 24;
-    package = pkgs.gnome3.adwaita-icon-theme;
-  };
-
   programs.newsboat = {
     enable = true;
     autoReload = true;

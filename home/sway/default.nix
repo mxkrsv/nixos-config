@@ -4,6 +4,12 @@
     ./apps
   ];
 
+  home.pointerCursor = {
+    name = "Adwaita";
+    size = 24;
+    package = pkgs.gnome3.adwaita-icon-theme;
+  };
+
   wayland.windowManager.sway = {
     enable = true;
 
