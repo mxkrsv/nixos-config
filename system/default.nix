@@ -152,7 +152,12 @@
 
     # for virtiofs in virt-manager
     virtiofsd
-  ];
+  ] ++ (with hunspellDicts; [
+    # Dictionaries have to be installed manually for now
+    en_US
+    ru_RU
+    pl_PL
+  ]);
 
   # xdg-desktop-portal (screen sharhing, file choosing, etc.)
   #xdg.portal = {
