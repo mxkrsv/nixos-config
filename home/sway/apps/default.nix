@@ -428,4 +428,30 @@
       };
     };
   };
+
+  xdg.desktopEntries = {
+    cmus = {
+      name = "cmus";
+      genericName = "Music player";
+      exec = "cmus %U";
+      terminal = true;
+      categories = [ "Audio" "Music" "ConsoleOnly" ];
+    };
+
+    newsboat = {
+      name = "newsboat";
+      genericName = "RSS feed reader";
+      exec = "newsboat %U";
+      terminal = true;
+      categories = [ "Feed" "News" "Network" "ConsoleOnly" ];
+    };
+
+    qalc = {
+      name = "qalc";
+      genericName = "Calculator";
+      exec = "qalc %U";
+      terminal = true;
+      categories = [ "Calculator" "Utility" "Science" "Education" "ConsoleOnly" ];
+    };
+  };
 }
