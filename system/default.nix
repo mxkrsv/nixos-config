@@ -14,6 +14,8 @@
 
     settings = {
       auto-optimise-store = true;
+      # Allow wheel group to use substituters
+      trusted-users = [ "root" "@wheel" ];
     };
 
     gc = {
