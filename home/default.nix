@@ -334,7 +334,7 @@
 
       display = {
         separator = "";
-        keyWidth = 10;
+        key.width = 10;
       };
 
       modules = [
