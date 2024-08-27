@@ -6,15 +6,15 @@
   programs.gnome-shell = {
     enable = true;
 
-    extensions = [
+    extensions = with pkgs.gnomeExtensions; [
       {
-        package = pkgs.gnomeExtensions.forge;
+        package = forge;
       }
       {
-        package = pkgs.gnomeExtensions.gsconnect;
+        package = gsconnect;
       }
       {
-        package = pkgs.gnomeExtensions.vitals;
+        package = vitals;
       }
     ];
   };
