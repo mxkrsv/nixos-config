@@ -16,6 +16,9 @@
       {
         package = vitals;
       }
+      {
+        package = blur-my-shell;
+      }
     ];
   };
 
