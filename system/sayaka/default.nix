@@ -49,23 +49,23 @@
     #login.fprintAuth = false;
   };
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  #services.tlp = {
+  #  enable = true;
+  #  settings = {
+  #    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+  #    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-      # amd-pstate=active
-      CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+  #    # amd-pstate=active
+  #    CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
+  #    CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
-      PLATFORM_PROFILE_ON_AC = "balanced";
-      PLATFORM_PROFILE_ON_BAT = "low-power";
+  #    PLATFORM_PROFILE_ON_AC = "balanced";
+  #    PLATFORM_PROFILE_ON_BAT = "low-power";
 
-      RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
-      RADEON_DPM_PERF_LEVEL_ON_BAT = "auto";
-    };
-  };
+  #    RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
+  #    RADEON_DPM_PERF_LEVEL_ON_BAT = "auto";
+  #  };
+  #};
 
   # lanzaboote
 
