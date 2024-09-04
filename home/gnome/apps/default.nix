@@ -21,6 +21,7 @@
       "text/html" = "org.gnome.Epiphany.desktop";
       "x-scheme-handler/http" = "org.gnome.Epiphany.desktop";
       "x-scheme-handler/https" = "org.gnome.Epiphany.desktop";
+      "x-scheme-handler/mailto" = "org.gnome.Geary.desktop";
     };
   };
 
