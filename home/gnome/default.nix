@@ -100,6 +100,9 @@
       move-to-workspace-9 = [ "<Super><Shift>9" ];
       move-to-workspace-10 = [ "<Super><Shift>0" ];
       move-to-workspace-last = [ "<Super><Shift>End" ];
+
+      # Free it up for the forge extension
+      minimize = [ "<Super><Alt>h" ];
     };
   };
 }
