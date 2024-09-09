@@ -8,7 +8,7 @@
 
     extensions = with pkgs.gnomeExtensions; [
       {
-        package = forge;
+        package = paperwm;
       }
       {
         package = gsconnect;
@@ -76,8 +76,10 @@
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      # The "<Super>Home/End" was there by default, let them remain
-      switch-to-workspace-1 = [ "<Super>Home" "<Super>1" ];
+      # The "<Super>Home/End" was there by default.
+      # However, "<Super>Home" on switch-to-workspace-1 conflicts with PaperWM,
+      # and I wasn't using it anyway, so let it go.
+      switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
@@ -103,6 +105,46 @@
 
       # Free it up for the forge extension
       minimize = [ "<Super><Alt>h" ];
+    };
+
+    "org/gnome/shell/extensions/paperwm" = {
+      disable-scratch-in-overview = true;
+      window-gap = 10;
+      vertical-margin = 10;
+      vertical-margin-bottom = 10;
+      selection-border-size = 0;
+      selection-border-radius = 0;
+    };
+
+    "org/gnome/shell/extensions/paperwm/keybindings" = {
+      close-window = [ "<Super>q" ];
+      live-alt-tab = [ "" ];
+      live-alt-tab-backward = [ "" ];
+      live-alt-tab-scratch = [ "<Super>minus" ];
+      live-alt-tab-scratch-backward = [ "" ];
+      move-down = [ "<Control><Super>Down" "<Shift><Super>j" ];
+      move-down-workspace = [ "<Shift><Super>Page_Down" "<Shift><Control><Super>j" ];
+      move-left = [ "<Shift><Super>Left" "<Shift><Super>h" ];
+      move-right = [ "<Shift><Super>Right" "<Shift><Super>l" ];
+      move-up = [ "<Control><Super>Up" "<Shift><Super>k" ];
+      move-up-workspace = [ "<Shift><Super>Page_Up" "<Shift><Control><Super>k" ];
+      new-window = [ "" ];
+      resize-h-dec = [ "" ];
+      resize-h-inc = [ "" ];
+      resize-w-dec = [ "" ];
+      resize-w-inc = [ "" ];
+      switch-down = [ "<Super>Down" "<Super>j" ];
+      switch-down-workspace = [ "<Super>Page_Down" "<Control><Super>j" ];
+      switch-last = [ "" ];
+      switch-left = [ "<Super>Left" "<Super>h" ];
+      switch-next = [ "" ];
+      switch-previous = [ "" ];
+      switch-right = [ "<Super>Right" "<Super>l" ];
+      switch-up = [ "<Super>Up" "<Super>k" ];
+      switch-up-workspace = [ "<Super>Page_Up" "<Control><Super>k" ];
+      take-window = [ "<Shift><Super>t" ];
+      toggle-scratch = [ "<Shift><Super>space" ];
+      toggle-scratch-window = [ "<Shift><Super>underscore" ];
     };
   };
 }
