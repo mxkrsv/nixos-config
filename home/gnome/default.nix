@@ -109,6 +109,9 @@
 
     "org/gnome/shell/extensions/paperwm" = {
       disable-scratch-in-overview = true;
+      gesture-enabled = false;
+      # Resture gnome workspace pill
+      show-workspace-indicator = false;
       window-gap = 10;
       vertical-margin = 10;
       vertical-margin-bottom = 10;
