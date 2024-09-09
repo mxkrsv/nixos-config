@@ -114,6 +114,8 @@
       show-workspace-indicator = false;
       # Mimic "smart gaps" but manually
       maximize-wihtin-tiling = false;
+      # Leave only right and down
+      open-window-position-option-left = false;
       window-gap = 10;
       vertical-margin = 10;
       vertical-margin-bottom = 10;
