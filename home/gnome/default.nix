@@ -145,6 +145,7 @@
       switch-last = [ "" ];
       switch-left = [ "<Super>Left" "<Super>h" ];
       switch-next = [ "" ];
+      switch-open-window-position = [ "<Super>b" ];
       switch-previous = [ "" ];
       switch-right = [ "<Super>Right" "<Super>l" ];
       switch-up = [ "<Super>k" ];
