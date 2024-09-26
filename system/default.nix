@@ -257,6 +257,9 @@
     })
   ];
 
+  # Allow non-free packages
+  nixpkgs.config.allowUnfree = true;
+
   # Fancy boot splash screen
   boot.plymouth.enable = true;
 }
