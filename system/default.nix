@@ -260,6 +260,9 @@
   # Allow non-free packages
   nixpkgs.config.allowUnfree = true;
 
+  # Useful for steam etc.
+  hardware.graphics.enable32Bit = true;
+
   # Fancy boot splash screen
   boot.plymouth.enable = true;
 }
