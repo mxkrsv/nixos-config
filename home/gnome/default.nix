@@ -153,6 +153,7 @@
       take-window = [ "<Shift><Super>t" ];
       toggle-scratch = [ "<Shift><Super>space" ];
       toggle-scratch-window = [ "<Shift><Super>underscore" ];
+      center-vertically = [ "<Shift><Super>v" ];
     };
   };
 }
