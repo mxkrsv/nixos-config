@@ -10,6 +10,8 @@
     dialect
     # A notes app with Nextcloud Notes sync
     iotas
+    # Terminal app
+    ptyxis
   ];
 
   xdg.mimeApps = {

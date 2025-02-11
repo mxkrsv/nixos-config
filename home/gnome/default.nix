@@ -48,7 +48,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
       name = "Terminal";
-      command = "kgx";
+      command = "ptyxis --new-window";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
