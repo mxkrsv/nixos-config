@@ -47,7 +47,7 @@
             installGhc = false;
           };
 
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installCargo = false;
             installRustc = false;
@@ -62,7 +62,7 @@
             };
           };
 
-          nil-ls = {
+          nil_ls = {
             enable = true;
             settings = {
               formatting.command = [ "nixpkgs-fmt" ];
