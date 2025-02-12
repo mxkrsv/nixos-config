@@ -85,10 +85,10 @@
             };
           };
 
-          typst-lsp = {
+          tinymist = {
             enable = true;
-            rootDir = "function() return vim.fn.getcwd() end";
-            extraOptions.settings = {
+            settings = {
+              formatterMode = "typstyle";
               exportPdf = "onSave";
             };
           };
