@@ -41,7 +41,11 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
-          hls.enable = true;
+
+          hls = {
+            enable = true;
+            installGhc = false;
+          };
 
           rust-analyzer = {
             enable = true;
