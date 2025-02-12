@@ -32,7 +32,7 @@
 
       lualine = {
         enable = true;
-        iconsEnabled = false;
+        settings.options.icons_enabled = false;
       };
 
       lsp = {
