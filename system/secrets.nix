@@ -1,5 +1,5 @@
 { ... }: {
   age.secrets = {
-    singbox_uuid_mxkrsv.file = ../secrets/singbox_uuid_mxkrsv.age;
+    singbox_uuid.file = ../secrets/singbox_uuid.age;
   };
 }

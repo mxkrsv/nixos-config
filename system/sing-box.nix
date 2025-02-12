@@ -75,7 +75,7 @@
           packet_encoding = "xudp";
 
           uuid = {
-            _secret = config.age.secrets.singbox_uuid_mxkrsv.path;
+            _secret = config.age.secrets.singbox_uuid.path;
           };
 
           tls = {
