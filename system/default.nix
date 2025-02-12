@@ -242,19 +242,19 @@
 
   nixpkgs.overlays = [
     # triple-buffering-v4-46 branch
-    (final: prev: {
-      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
-        mutter = gnomePrev.mutter.overrideAttrs (old: {
-          src = pkgs.fetchFromGitLab {
-            domain = "gitlab.gnome.org";
-            owner = "vanvugt";
-            repo = "mutter";
-            rev = "0d46de978d3dccc3784ba1902cbd9dada61d8a86";
-            hash = "sha256-nz1Enw1NjxLEF3JUG0qknJgf4328W/VvdMjJmoOEMYs=";
-          };
-        });
-      });
-    })
+    #(final: prev: {
+    #  gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+    #    mutter = gnomePrev.mutter.overrideAttrs (old: {
+    #      src = pkgs.fetchFromGitLab {
+    #        domain = "gitlab.gnome.org";
+    #        owner = "vanvugt";
+    #        repo = "mutter";
+    #        rev = "0d46de978d3dccc3784ba1902cbd9dada61d8a86";
+    #        hash = "sha256-nz1Enw1NjxLEF3JUG0qknJgf4328W/VvdMjJmoOEMYs=";
+    #      };
+    #    });
+    #  });
+    #})
   ];
 
   # Allow non-free packages
