@@ -54,6 +54,20 @@
             [
               (mkDictionaryEntry [
                 "url"
+                (mkVariant "https://kagi.com/search?q=%s")
+              ])
+              (mkDictionaryEntry [
+                "bang"
+                (mkVariant "!k")
+              ])
+              (mkDictionaryEntry [
+                "name"
+                (mkVariant "Kagi")
+              ])
+            ]
+            [
+              (mkDictionaryEntry [
+                "url"
                 (mkVariant "https://www.google.com/search?q=%s")
               ])
               (mkDictionaryEntry [
@@ -123,7 +137,7 @@
             ]
           ];
 
-        default-search-engine = "Google";
+        default-search-engine = "Kagi";
       };
   };
 }
