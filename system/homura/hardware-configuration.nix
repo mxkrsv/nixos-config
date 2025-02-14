@@ -13,54 +13,40 @@
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/f64ab27f-eac0-41f3-a6d5-d4bab33c80d1";
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/228a3c5e-7842-460e-84b6-46d72991825e";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/15235875-9a32-4d5d-9002-ace3dd527ee2";
 
   fileSystems."/home" =
     {
-      device = "/dev/disk/by-uuid/f64ab27f-eac0-41f3-a6d5-d4bab33c80d1";
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "subvol=home" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/nix" =
     {
-      device = "/dev/disk/by-uuid/f64ab27f-eac0-41f3-a6d5-d4bab33c80d1";
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/CED7-E82B";
+      device = "/dev/disk/by-uuid/4D88-FB35";
       fsType = "vfat";
     };
 
-  boot.initrd.luks.devices."cryptdata".device = "/dev/disk/by-uuid/130623b9-d6bc-41d2-9e29-5efb35073ca9";
+  boot.initrd.luks.devices."cryptdata".device = "/dev/disk/by-uuid/5709da98-bbf0-4176-a4ac-1bb4a4ee1783";
 
-  fileSystems."/home/mxkrsv/data" =
+  fileSystems."/media/data" =
     {
-      device = "/dev/disk/by-uuid/fdb02358-2703-435c-80ab-0a2ebf642d80";
-      fsType = "btrfs";
-      options = [ "subvol=data" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home/mxkrsv/code" =
-    {
-      device = "/dev/disk/by-uuid/fdb02358-2703-435c-80ab-0a2ebf642d80";
-      fsType = "btrfs";
-      options = [ "subvol=code" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home/mxkrsv/Music" =
-    {
-      device = "/dev/disk/by-uuid/fdb02358-2703-435c-80ab-0a2ebf642d80";
-      fsType = "btrfs";
-      options = [ "subvol=music" "compress=zstd" "noatime" ];
+      device = "/dev/mapper/cryptdata";
+      fsType = "ext4";
+      options = [ "noatime" ];
     };
 
   swapDevices = [ ];
