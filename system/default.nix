@@ -61,7 +61,7 @@
   # Enable sound.
   # No real need to save the state on reboot
   #sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mxkrsv = {
