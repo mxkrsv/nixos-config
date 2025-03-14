@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
 
@@ -23,9 +28,14 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, nur, ... }@inputs: {
     nixosConfigurations =
       let
         makeNixosConfiguration = name: modules: nixpkgs.lib.nixosSystem {
@@ -64,6 +74,7 @@
             ./home/gnome
             nixvim.homeManagerModules.nixvim
             nix-index-database.hmModules.nix-index
+            nur.modules.homeManager.default
           ] ++ modules;
         };
       in
