@@ -49,6 +49,12 @@
   programs.librewolf = {
     enable = true;
 
+    settings = {
+      "privacy.resistFingerprinting" = false;
+      "privacy.fingerprintingProtection" = true;
+      "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
+    };
+
     profiles.default = {
       isDefault = true;
 
