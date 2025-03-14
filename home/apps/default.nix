@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     gimp
     xonotic
@@ -42,6 +42,31 @@
       # ublock origin
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
     ];
+  };
+
+  home.file.".librewolf/default/chrome/firefox-gnome-theme".source =
+    inputs.firefox-gnome-theme;
+  programs.librewolf = {
+    enable = true;
+
+    profiles.default = {
+      isDefault = true;
+
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        bitwarden
+        gsconnect
+        gnome-shell-integration
+      ];
+
+      userChrome = ''
+        @import "firefox-gnome-theme/userChrome.css";
+      '';
+      userContent = ''
+        @import "firefox-gnome-theme/userContent.css";
+      '';
+      extraConfig = builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js";
+    };
   };
 
   fonts.fontconfig.enable = true;
