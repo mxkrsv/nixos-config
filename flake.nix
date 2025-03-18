@@ -33,6 +33,11 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+
+    betterfox = {
+      url = "github:yokoffing/Betterfox";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, home-manager, lanzaboote, nixvim, agenix, nix-index-database, nur, ... }@inputs: {

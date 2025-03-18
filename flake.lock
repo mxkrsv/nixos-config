@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "betterfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1740523396,
+        "narHash": "sha256-5fD8ffAyIgQYJ0Z/bMEpqf17YghVQNaK+giZ1Tyk6/Q=",
+        "owner": "yokoffing",
+        "repo": "Betterfox",
+        "rev": "6ef4cdbbe7bc3bb1d69a2291a25cc8841b39544a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yokoffing",
+        "repo": "Betterfox",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1741148495,
@@ -462,6 +478,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "betterfox": "betterfox",
         "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager_2",
         "lanzaboote": "lanzaboote",
