@@ -23,10 +23,10 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "librewolf.desktop";
-      "x-scheme-handler/http" = "librewolf.desktop";
-      "x-scheme-handler/https" = "librewolf.desktop";
-      "application/xhtml+xml" = "librewolf.desktop";
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
     };
   };
 
@@ -42,16 +42,16 @@
     ];
   };
 
-  home.file.".librewolf/default/chrome/firefox-gnome-theme".source =
+  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source =
     inputs.firefox-gnome-theme;
-  programs.librewolf = {
+  programs.firefox = {
     enable = true;
 
-    settings = {
-      "privacy.resistFingerprinting" = false;
-      "privacy.fingerprintingProtection" = true;
-      "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
-    };
+    #settings = {
+    #  "privacy.resistFingerprinting" = false;
+    #  "privacy.fingerprintingProtection" = false;
+    #  "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
+    #};
 
     profiles.default = {
       isDefault = true;
@@ -69,7 +69,10 @@
       userContent = ''
         @import "firefox-gnome-theme/userContent.css";
       '';
-      extraConfig = builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js";
+      extraConfig = ''
+        ${builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js"}
+        ${builtins.readFile "${inputs.betterfox}/user.js"}
+      '';
 
       search = {
         force = true;
